@@ -36,4 +36,5 @@ Run `npm run dev`
 
 ## 주요 학습 키워드
 - 지연시간을 적용하여 마지막 이벤트만 발생시키는 기능 (debounce) 
-- request api를 대신하기 위한 Promise 활용
+- request api를 대신하기 위한 Promise 활용 (test를 위한 mock data 활용)
+- 디자인 부분과 기능을 분리하기 위한 방법
