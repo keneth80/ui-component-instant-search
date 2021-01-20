@@ -36,7 +36,4 @@ Run `npm run dev`
 
 ## 주요 학습 키워드
 - 지연시간을 적용하여 마지막 이벤트만 발생시키는 기능 (debounce) 
-- 
-- html element의 data 속성 (selector.dataset)
-- arrow function의 활용
-- Template literals 을 활용한 html templete 관리
+- request api를 대신하기 위한 Promise 활용
