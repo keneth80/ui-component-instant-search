@@ -1,42 +1,42 @@
 // Import stylesheets
 import './style.css';
-import { retrieveUserList } from './solution/presenter/dropdown/mock/user';
-import { retrieveSelectList, retrieveFavoriteById } from './solution/presenter/dropdown/mock/option';
-import { DropDownList } from './solution/presenter/dropdown';
+import { InstantSearch } from './solution/presenter/instant-search';
+import { retrieveWordList } from './solution/presenter/instant-search/mock/word';
 
 
-const displayUserList = (selector, data) => {
+const bootstrap = () => {
+    // instant search setup
+    const instantSearch = new InstantSearch({
+        selector: '#instant-search',
+        css: 'instant-search-input',
+        placeholder: 'please enter keyword',
+        changeEvent: (eventText) => {
+            // 해당 단어에 맞는 데이터를 출력
+            getData(eventText);
+        }
+    });
+
+    // 최초에 전체 리스트를 출력.
+    getData();
+}
+
+const displayWordList = (selector, data) => {
     let itemList = '';
     for (let i = 0; i < data.length; i++) {
         itemList += `
         <div>
-            <span>User: ${data[i].userName}</span>,
-            <span>favorites: ${retrieveFavoriteById(data[i]['favorites']).label}</span>
+            <span>${data[i].word}</span>
         </div>`
     }
     selector.innerHTML = itemList;
 }
 
-const bootstrap = () => {
-    // dropdown list setup
-    const dropdown = new DropDownList({
-        selector: '#dropdown',
-        backdrop: '.back-drop',
-        idField: 'id',
-        labelField: 'label',
-        data: retrieveSelectList(),
-        changeEvent: (event) => {
-            displayUserList(
-                document.getElementById('userlist'),
-                event.id ? 
-                retrieveUserList().filter((item) => item.favorites === event.id) :
-                retrieveUserList()
-            );
-        }
-    });
-
-    // user list display
-    displayUserList(document.getElementById('userlist'), retrieveUserList());
+const getData = (targetWord = '') => {
+    // TODO: Write JS code here!'
+    retrieveWordList(targetWord)
+        .then((result) => {
+            displayWordList(document.querySelector('#wordlist'), result);
+        });
 }
 
 bootstrap();
