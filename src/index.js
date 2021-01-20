@@ -32,6 +32,7 @@ const displayWordList = (selector, data) => {
 }
 
 const getData = (targetWord = '') => {
+    // q4. Promise를 사용하여 검색 키워드에 맞는 데이터를 가져와 리스트를 출력하시오.
     // TODO: Write JS code here!'
     retrieveWordList(targetWord)
         .then((result) => {

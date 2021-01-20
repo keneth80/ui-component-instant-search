@@ -26,6 +26,7 @@ const data = [
 ];
 
 export const retrieveWordList = (word) => {
+    // q4. Promise를 사용하여 데이터를 return
     // TODO: Write JS code here!'
     return [];
 }

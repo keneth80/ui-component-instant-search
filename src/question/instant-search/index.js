@@ -40,16 +40,18 @@ export class InstantSearch {
     * description: 최초 생성할 때 input element를 생성한다. 템플릿을 관리한다.
     */
     initialize(selector, configuration) {
+        // q2. configuration을 참고하여 input element를 생성하시오. (기능과 디자인을 분리하기 위한 방법)
         // TODO: Write JS code here!'
         return null;
     }
 
     /*
     * title: event binding method
-    * description: 모든 이벤트를 처리한다.
+    * description: component의 기능을 구현.
     */
     eventBinding() {
         this.textinputElement.addEventListener('keyup', (event) => {
+            // q3. debounce 기능을 통해 가져온 데이터를 외부로 전달한다.
             // TODO: Write JS code here!'
         });
     }

@@ -27,7 +27,7 @@ Run `npm run dev`
 ## 문제
 - q1. debounce 기능을 구현하시오.
 
-- q2. input component의 기능과 style을 분리하여 구현하시오.
+- q2. configuration을 참고하여 input element를 생성하시오. (기능과 디자인을 분리하기 위한 방법)
 
 - q3. debounce 기능을 통해 가져온 데이터를 외부로 전달한다. 
 
